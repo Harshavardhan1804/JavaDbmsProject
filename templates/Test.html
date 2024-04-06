@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Test-Bolg</title>
+</head>
+<body>
+<h2>Preview Our blog</h2>
+<h1> hello Everyone</h1>
+<form action="#" th:action="@{/api/html/AddRow}" th:object="${newDatas}" method="post">
+    <p>Click to see Users of Our Blog</p>
+    <!--    <p>Click to see Users of Our Blog</p>-->
+    <label for="names">Name:</label>
+    <input type="text" id="names" name="names" required/>
+
+    <label for="age">Age:</label>
+    <input type="text" id="age" name="age" required/>
+
+    <button type="submit">Submit</button>
+</form>
+.</body>
+</html>

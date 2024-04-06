@@ -1,0 +1,120 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Table</title>
+  <style>
+    img
+    {
+      height: 45% ;
+      width: 60% ;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background:linear-gradient(to right,#5797d6,#1cadb8);
+      margin: 0;
+      padding: 0;
+    }
+    .pricing-table{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 1rem;
+      margin: 3rem;
+      height: 500px;
+    }
+    .pricing-table__plan {
+      background: linear-gradient(to right,#294736ad,#7f72a3b6);
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .pricing-table__plan--basic {
+      border: 2px solid #ddd;
+      transition: 0.8s;
+    }
+    .pricing-table__plan--basic:hover{
+
+      transform: scale(1.1);
+      box-shadow:6px 6px 5px 0px rgba(0, 0, 0, 0.2);
+    }
+    .pricing-table__plan--standard {
+      border: 2px solid #4d90fe;
+      transition: 0.8s;
+    }
+    .pricing-table__plan--standard:hover {
+      transform: scale(1.1);
+      box-shadow:6px 6px 5px 0px rgba(0, 0, 0, 0.2);
+    }
+    .pricing-table__plan--premium {
+      border: 2px solid #f06c64;
+      transition: 0.8s;
+    }
+    .pricing-table__plan--premium:hover {
+      transform: scale(1.1);
+      box-shadow:6px 6px 5px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    .pricing-table__title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .pricing-table__price {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .pricing-table__details {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .pricing-table__details li {
+      padding: 0.2rem 0;
+    }
+  </style>
+</head>
+<body>
+<div class="pricing-table">
+  <div class="pricing-table__plan pricing-table__plan--basic">
+    <h2 class="pricing-table__title">Basic blog platform</h2>
+    <img src="C:\Users\Student\Desktop\Blog\beach - Copy.jpg"><br>
+    <span class="pricing-table__price">$10</span>
+    <ul class="pricing-table__details">
+      <li>Entry-level package for small blogs</li>
+      <li>✓1 user</li>
+      <li>✓Limited storage</li>
+    </ul>
+  </div>
+  <div class="pricing-table__plan pricing-table__plan--standard">
+    <h2 class="pricing-table__title">Standard blog platform</h2>
+    <img src="sport.jpg"><br>
+    <span class="pricing-table__price">$25</span>
+    <ul class="pricing-table__details">
+      <li>Ideal for growing blogs with more features</li>
+      <li>✓ 3 users</li>
+      <li>✓ Moderate storage</li>
+    </ul>
+  </div>
+  <div class="pricing-table__plan pricing-table__plan--premium">
+    <h2 class="pricing-table__title">Premium blog platform</h2>
+    <img src="C:\Users\Student\Desktop\Blog\watch - Copy.jpg"><br>
+
+    <span class="pricing-table__price">$50</span>
+    <ul class="pricing-table__details">
+      <li>Advanced package for high-traffic blogs</li>
+      <li>✓Unlimited users</li>
+      <li>✓Large storage</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
+

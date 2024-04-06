@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+    
+		img
+		{
+			height: 400px;
+			width: 550px;
+			margin: 20px;
+			padding-left: 50px;
+		}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       
+
+        body {
+          
+          font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+
+            color:white;
+            overflow-x: hidden;
+           
+            background:black;
+         
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0.8);
+           
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+           
+            position: fixed;
+            width: 100%;
+            z-index: 999;
+            transition: background-color 0.3s ease;
+        }
+
+        header:hover {
+            background-color: rgba(34, 34, 34, 0.8);
+            
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: auto;
+           
+            transition: color 0.3s ease;
+          
+        }
+
+        header:hover h1 {
+            color: #ffcc00;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 15px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+          
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #d85730;
+        }
+
+        .nav-indicator {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #b34c4c;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover .nav-indicator {
+            width: 100%;
+        }
+
+        main {
+            padding-top: 80px;
+            text-align: center;
+        }
+
+        .event-container {
+            display: flex;
+            flex-direction: column;
+           
+            align-items:center ;
+           
+            gap: 40px;
+          
+            
+        }
+
+        .event {
+            width: 80%;
+           
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            transition: transform 0.4s ease;
+            transition: width 200px;
+         
+        }
+
+        .event:hover {
+          color:rgb(255, 183, 28);
+            transform: scale(1.05);
+          
+        }
+
+        .event img {
+            max-width: 100%;
+            border-radius: 10px;
+            transition: opacity 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+            
+            max-height: 300px;
+           
+            filter: grayscale(0%) brightness(90%);
+     
+        }
+
+        .event:hover img {
+            opacity: 1;
+         
+            filter: grayscale(0%) brightness(100%);
+          
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+
+            border-radius: 10px 10px 0 0;
+           
+        }
+
+        .event-title {
+            flex-grow: 1;
+           
+            text-align: left;
+            font-size: 1.2rem;
+        }
+
+        .event-description {
+          font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: italic;
+            font-size: 1.1rem;
+          
+            text-align: left;
+            margin-top: 10px;
+       
+            display: none;
+            
+        }
+
+        .event:hover .event-description {
+          
+          color:#fff;
+            display: block;
+        
+        }
+
+        footer {
+            background-color: rgba(51, 51, 51, 0.8);
+       
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  background-color: #000;
+ 
+  height: 10vw;
+  width: 10vw;
+  display: flex;
+  justify-content:left;
+  margin: 0;
+
+  color: rgba(225,225,225, .01);
+  background-image: url("https://images.unsplash.com/photo-1499195333224-3ce974eecb47?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2cf549433129d4227d1879347b9e78ce&auto=format&fit=crop&w=1248&q=80");
+  background-repeat: repeat;
+  -webkit-background-clip:text;
+  animation: animate 15s ease-in-out infinite;
+  
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+  @keyframes animate {
+    0%, 100% {
+      background-position: left top;
+    }
+    25%{
+      background-position: right bottom;
+     }
+    50% {
+      background-position: left bottom;
+    }
+    75% {
+      background-position: right top;
+    }   
+}
+      
+
+        .create-event-btn {
+            background-color: #db4040;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-radius: 5px;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .create-event-btn:hover {
+            background-color: #fff;
+            color: #d62215;
+            transform: scale(1.05);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .create-event-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            transition: opacity 0.3s ease;
+            border-radius: 5px;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .create-event-btn:hover::before {
+            opacity: 1;
+        }
+        .a
+        {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <h1 class="logo">BLOG</h1>
+    <nav>
+        <a href="#home">Home<span class="nav-indicator"></span></a>
+        <a href="#about">About<span class="nav-indicator"></span></a>
+        <!-- <a href="login.html">LOGIN<span class="nav-indicator"></span></a> -->
+        <a href="/api/html/pricing">PRICING<span class="nav-indicator"></span></a>
+        <a href="#contact">Contact<span class="nav-indicator"></span></a>
+    </nav>
+                                       
+</header>
+
+<main>
+    <div class="event-container">
+      <div class="continer 1">
+        <div class="event">
+            <img src="blog-.webp" style="opacity: 1;"><BR><BR>
+            <div class="event-title">
+                <h2><a href="/api/html/samole" class="a"> The varies posts </h2>
+                <!-- <p class="event-description"> A blog is a type of website or online platform where individuals, groups, or organizations regularly publish content in the form of articles, posts, or entries. .</p> -->
+                <p class="event-description"> You can see our post that you can like ,comment . you can buy the product in their responsive website which we only advertising the product ,supporting customer</p>
+                </a></div>
+        </div>
+        <div class="event">
+            <img src="Blogging.jpg" alt="Event Image" style="opacity: 1;">
+            <div class="event-title">
+                <a href="index.html"><h2>Subscribed user page</h2></a>
+                <p class="event-description">you can subscribe to receive updates from the blog,quikly. These updates could include new blog posts, newsletters, announcements, or other relevant content.and also you must subscribe our page to update your post for advertising<br><br>For subscribe info 
+                <a href="price.html">click here</a></p>
+
+            </div>
+        </div>
+        <!-- <div class="event">
+            <img src="C:\Users\Student\Downloads\demo\src\main\resources\templates\2.jpg" alt="Event Image" style="opacity: 1;">
+            <div class="event-title">
+                <h2>End-to-end event planning</h2>
+                <p class="event-description">From a fully-customizable event website to email campaigns, from customizable social banners to affiliate marketing, Zoho Backstage helps you get the word out about your event in multiple ways so you can reach a wider audience</p>
+            </div>
+        </div> -->
+    </div>
+</main>
+
+
+</body>
+
+</html>
